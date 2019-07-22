@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="angular.js"></script>
+    <title>Hello AngularJS!</title>
+</head>
+
+<body ng-init="name = 'Shalom'">
+    <h1>Your name is <span ng-bind="name" /></h1>
+    <h3>One could also pronounce it "{{ name }}"</h3>
+    <p ng-if="name === 'Shalom'">Hello Shalom!</p>
+    <p ng-if="name !== 'Shalom'">You're not Shalom :(</p>
+</body>
+
+</html>
