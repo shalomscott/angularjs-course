@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="person-controller.js"></script>
+
+    <title>Person Model</title>
+</head>
+
+<body>
+    <div ng-controller="personController">
+        <h1>Create a Person</h1>
+        <p>Name : <input ng-model='person.name' type="text"></p>
+        <p>Age : <input ng-model='person.age' type="number"></p>
+        <p>Password : <input ng-model='person.password' type="password"></p>
+        <input ng-model='person.gender' name="gender" type="radio" value="male" checked=true>Male</input>
+        <input ng-model='person.gender' name="gender" type="radio" value="female">Female</input>
+        <input ng-model='person.gender' name="gender" type="radio" value="other">Other</input>
+        <br /><br />
+        <select ng-model='person.carType'>
+            <option value="volvo">Volvo</option>
+            <option value="mitsubishi">Mitsubishi</option>
+            <option value="honda">Honda</option>
+            <option value="ford">Ford</option>
+        </select>
+        <br /><br />
+        <input type="checkbox" ng-model='person.hasBike'>I have a bike</input>
+        <br /><br />
+        <h2>{{person.name}}</h2>
+        <p>Age: {{ person.age }}</p>
+        <p>Password: {{ person.password }}</p>
+        <p>Gender: {{ person.gender }}</p>
+        <p>Gender: {{ person.carType }}</p>
+        <p>Has a bike? {{ person.hasBike }}</p>
+    </div>
+</body>
+
+</html>
