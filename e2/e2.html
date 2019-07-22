@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="person-class.js"></script>
+    <script src="person-constructor.js"></script>
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <h1 onclick="onClick()">Create a Person</h1>
+    <p>Name : <input id="nameText" type="text"></p>
+    <p>Age : <input id="ageText" type="number"></p>
+    <p>Password : <input id="passwordText" type="password"></p>
+    <input name="gender" type="radio" value="male" checked=true>Male</input>
+    <input name="gender" type="radio" value="female">Female</input>
+    <input name="gender" type="radio" value="other">Other</input>
+    <br /><br />
+    <select id='carTypeSelector'>
+        <option value="volvo">Volvo</option>
+        <option value="mitsubishi">Mitsubishi</option>
+        <option value="honda">Honda</option>
+        <option value="ford">Ford</option>
+    </select>
+    <br /><br />
+    <input type="checkbox" id="hasBikeCheckbox">I have a bike</input>
+    <br /><br />
+    <button class="primary-bkg" style="color: white" onclick="onClick()">Create</button>
+</body>
+
+</html>
