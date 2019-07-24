@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="mainModule">
+	<head>
+		<title>Inception</title>
+		<script src="../../angular.js"></script>
+
+		<!-- dependencies -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js"></script>
+
+		<script src="bootstrap.js"></script>
+		<script src="mainCtrl.js"></script>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div ng-controller="mainCtrl">
+			<p>From the main module: {{ message }}</p>
+
+			<div ng-controller="secondCtrl">
+				From the second module: {{ message }}
+			</div>
+
+			<p>
+				And now from the third module:
+				<button ng-click="clickToOpen()">Click Me!</button>
+			</p>
+		</div>
+	</body>
+</html>
