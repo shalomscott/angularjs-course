@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="main">
+	<head>
+		<title>Clock!</title>
+		<script src="../../angular.js"></script>
+		<script src="bootstrap.js"></script>
+		<script src="services.js"></script>
+		<script src="controllers.js"></script>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<div ng-controller="inputCtrl">
+			<h3>A: <input type="number" ng-model="appValues.a" /></h3>
+			<h3>B: <input type="number" ng-model="appValues.b" /></h3>
+			<input
+				type="radio"
+				ng-model="appValues.colors"
+				value="green-yellow"
+			>Green-Yellow</input>
+			<input
+				type="radio"
+				ng-model="appValues.colors"
+				value="blue-brown"
+			>Blue-Brown</input>
+
+			<div ng-controller="sumCtrl">
+				<p ng-class="getClass()">A + B = {{ appValues.a + appValues.b }}</p>
+			</div>
+
+			<div ng-controller="divCtrl">
+				<p>A / B = {{ appValues.a / appValues.b }}</p>
+			</div>
+
+			<div ng-controller="ACtrl">
+				<h3>Count up to A:</h3>
+				<p ng-if="appValues.a < 1">{{ errorMessages.aIsNegative }}</p>
+				<span ng-if="appValues.a >= 1" ng-repeat="num in countToA()">{{ num }} </span>
+			</div>
+
+			<div ng-controller="BCtrl">
+				<h3>Count down to B:</h3>
+				<p ng-if="appValues.b < 1">{{ errorMessages.bIsNegative }}</p>
+				<span ng-if="appValues.b >= 1" ng-repeat="num in countDownToB()">{{ num }} </span>
+			</div>
+
+			<div ng-controller="historyCtrl">
+				<h3>A's history: {{ historyA | json }}</h3>
+				<h3>B's history: {{ historyB | json }}</h3>
+			</div>
+		</div>
+	</body>
+</html>
