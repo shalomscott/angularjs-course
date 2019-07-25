@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Final Project</title>
+		<script src="../../angular.js"></script>
+		<script src="bootstrap.js"></script>
+		<script src="square.js"></script>
+		<script src="controllers.js"></script>
+		<script src="values.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="boardCtrl as ctrl">
+			<div ng-repeat="s in ctrl.squares">
+				<p>
+					<button
+						style="font-size : 20px;"
+						ng-click="ctrl.selectSquare($index)"
+					>
+						{{ s.isAlive ? '👨' : '💀' }}
+					</button>
+					<span
+						ng-if="ctrl.selectedIndex === $index || ctrl.hintIndex === $index"
+					>
+						{{ s.number }}
+					</span>
+				</p>
+			</div>
+		</div>
+		<div ng-controller="scoreCtrl as ctrl">
+			<h2>Score:</h2>
+			<p><b>Total Guesses:</b> {{ ctrl.guesses.total }}</p>
+			<p><b>Correct Guesses:</b> {{ ctrl.guesses.correct }}</p>
+		</div>
+		<div ng-controller="bannerCtrl as ctrl">
+			<h1 ng-if="ctrl.guesses.needed === ctrl.guesses.correct">
+				You Win!
+			</h1>
+		</div>
+	</body>
+</html>
